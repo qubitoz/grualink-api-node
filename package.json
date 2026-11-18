@@ -1,0 +1,24 @@
+{
+  "name": "grualink-api-node",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Example integration with the GRUALINK public API in Node.js/TypeScript: minimal client, signed webhook receiver and shared contract kit.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "vectors": "node scripts/generate-signature-vectors.mjs",
+    "vectors:check": "node scripts/generate-signature-vectors.mjs --check",
+    "example:request": "npm run build && node dist/examples/request-tow.js",
+    "example:webhook": "npm run build && node dist/examples/webhook-server.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "typescript": "^7.0.2"
+  }
+}
